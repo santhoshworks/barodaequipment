@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "next-dev",
+      "runtimeExecutable": "/Users/santhoshpalanisamy/.nvm/versions/node/v22.14.0/bin/npx",
+      "runtimeArgs": ["next", "dev"],
+      "port": 3000,
+      "url": "http://localhost:3000"
+    }
+  ]
+}

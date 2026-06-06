@@ -1,0 +1,39 @@
+@use "sass:map";
+
+// Color palette — Baroda Equipment orange theme
+$navy:       #1C0A02;
+$navy-light: #2E1508;
+$body-blue:  #1F1208;
+$mint:       #FF8C3A;
+$teal:       #A83B00;
+$teal-mid:   #D96B1A;
+$teal-light: #F4A05A;
+$bg-light:   #FFF8F0;
+$white:      #ffffff;
+$text-muted: rgba(44, 20, 5, 0.65);
+
+$shadow-card:  0 4px 24px rgba(28, 10, 2, 0.08);
+$shadow-hover: 0 12px 40px rgba(28, 10, 2, 0.16);
+
+$font-family-base: 'Open Sans', sans-serif;
+
+$breakpoints: (
+  xs:  0,
+  sm:  576px,
+  md:  768px,
+  lg:  1024px,
+  xl:  1200px,
+  xxl: 1400px,
+);
+
+@mixin media-breakpoint-up($bp) {
+  @if map.has-key($breakpoints, $bp) {
+    @media (min-width: #{map.get($breakpoints, $bp)}) { @content; }
+  }
+}
+
+@mixin media-breakpoint-down($bp) {
+  @if map.has-key($breakpoints, $bp) {
+    @media (max-width: #{map.get($breakpoints, $bp) - 1px}) { @content; }
+  }
+}

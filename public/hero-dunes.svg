@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <!-- Warm amber-to-burnt-orange sky gradient -->
+    <linearGradient id="hBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFA820"/>
+      <stop offset="100%" stop-color="#DE6C08"/>
+    </linearGradient>
+
+    <!-- Dune layer gradients (each slightly darker than the last) -->
+    <linearGradient id="hG1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E88210"/>
+      <stop offset="100%" stop-color="#C96400"/>
+    </linearGradient>
+    <linearGradient id="hG2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D87210"/>
+      <stop offset="100%" stop-color="#BA5400"/>
+    </linearGradient>
+    <linearGradient id="hG3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C86408"/>
+      <stop offset="100%" stop-color="#AC4800"/>
+    </linearGradient>
+    <linearGradient id="hG4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BC5800"/>
+      <stop offset="100%" stop-color="#9C3E00"/>
+    </linearGradient>
+
+    <style>
+      /* Each dune layer drifts at a unique speed and direction */
+      .dn { will-change: transform; }
+      .d1 { animation: dnDrift 20s ease-in-out infinite alternate; }
+      .d2 { animation: dnDrift 15s ease-in-out infinite alternate-reverse; }
+      .d3 { animation: dnDrift 11s ease-in-out infinite alternate; }
+      .d4 { animation: dnDrift  8s ease-in-out infinite alternate-reverse; }
+
+      @keyframes dnDrift {
+        from { transform: translateX(0px); }
+        to   { transform: translateX(-100px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Sky / background -->
+  <rect width="1920" height="420" fill="url(#hBg)"/>
+
+  <!-- Dune 1 — furthest back, lowest amplitude, slowest -->
+  <path class="dn d1" fill="url(#hG1)" opacity="0.5"
+    d="M-200,248
+       C 80,214  260,236  480,222
+       C 700,208  900,230 1120,218
+       C1340,206 1560,226 1760,214
+       C1880,207 1960,220 2120,212
+       L2120,420 L-200,420 Z"/>
+
+  <!-- Dune 2 -->
+  <path class="dn d2" fill="url(#hG2)" opacity="0.68"
+    d="M-200,278
+       C 60,252  240,270  460,257
+       C 680,244  900,264 1120,252
+       C1340,240 1560,260 1760,248
+       C1880,240 1960,254 2120,246
+       L2120,420 L-200,420 Z"/>
+
+  <!-- Dune 3 -->
+  <path class="dn d3" fill="url(#hG3)" opacity="0.84"
+    d="M-200,306
+       C 70,284  250,300  470,288
+       C 690,276  920,296 1140,284
+       C1360,272 1580,292 1780,280
+       C1900,272 1970,286 2120,278
+       L2120,420 L-200,420 Z"/>
+
+  <!-- Dune 4 — closest, sharpest, fastest -->
+  <path class="dn d4" fill="url(#hG4)"
+    d="M-200,334
+       C 80,314  260,330  480,318
+       C 700,306  940,325 1160,313
+       C1380,301 1600,320 1800,308
+       C1920,300 1980,314 2120,306
+       L2120,420 L-200,420 Z"/>
+</svg>

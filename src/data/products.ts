@@ -1,0 +1,68 @@
+import type { Product } from '@/types';
+
+export const products: Product[] = [
+  {
+    id: 'pressure-vessels',
+    name: 'Pressure Vessels',
+    description: 'Custom-designed ASME/PED compliant vessels for high-pressure process applications.',
+    image: '/prod-pressure-vessel.webp',
+    href: '/products/pressure-vessels',
+    features: ['ASME VIII Div 1 & 2', 'Full material traceability', 'Third-party inspection'],
+  },
+  {
+    id: 'heat-exchangers',
+    name: 'Heat Exchangers',
+    description: 'Shell & tube, plate, and air-cooled exchangers for thermal process duties.',
+    image: '/prod-heat-exchangers.webp',
+    href: '/products/heat-exchangers',
+    features: ['TEMA standards', 'Shell & tube / plate', 'Custom thermal design'],
+  },
+  {
+    id: 'storage-tanks',
+    name: 'Storage Tanks',
+    description: 'Atmospheric and low-pressure storage tanks in carbon steel and stainless steel.',
+    image: '/prod-storage-tanks.webp',
+    href: '/products/storage-tanks',
+    features: ['API 650 / API 620', 'Fixed & floating roof', 'Lining options available'],
+  },
+  {
+    id: 'piping-systems',
+    name: 'Piping Systems',
+    description: 'Fabricated pipe spools, manifolds, and complete piping skids.',
+    image: '/prod-piping.webp',
+    href: '/products/piping-systems',
+    features: ['ASME B31.3', 'CS / SS / Alloy piping', 'NDT tested'],
+  },
+  {
+    id: 'boilers',
+    name: 'Boilers',
+    description: 'IBR-registered boilers and pressure parts for industrial steam generation.',
+    image: '/prod-boilers.webp',
+    href: '/products/boilers',
+    features: ['IBR certified', 'Fire & water tube', 'Up to 50 TPH'],
+  },
+  {
+    id: 'skid-mounted',
+    name: 'Skid Mounted Units',
+    description: 'Pre-assembled process skids for oil & gas, utilities, and chemical plants.',
+    image: '/prod-skid.webp',
+    href: '/products/skid-mounted',
+    features: ['Plug-and-play', 'FAT tested', 'Instrumented & piped'],
+  },
+  {
+    id: 'offshore-equipment',
+    name: 'Offshore Equipment',
+    description: 'Nace MR0175 compliant separators, scrubbers, and vessels for offshore duty.',
+    image: '/prod-offshore.webp',
+    href: '/products/offshore-equipment',
+    features: ['NACE MR0175', 'Blast zone rated', 'DNV / BV approved'],
+  },
+  {
+    id: 'structural-fabrication',
+    name: 'Structural Fabrication',
+    description: 'Platforms, pipe racks, walkways, and structural steel for process plants.',
+    image: '/prod-structures.webp',
+    href: '/products/structural-fabrication',
+    features: ['IS 800 / AISC', 'Hot-dip galvanized', 'Blast & paint'],
+  },
+];

@@ -1,0 +1,41 @@
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  href: string;
+  features?: string[];
+}
+
+export interface Stat {
+  count: number;
+  suffix?: string;
+  label: string;
+}
+
+export interface Certification {
+  id: string;
+  name: string;
+  image: string;
+  width: number;
+  height: number;
+}
+
+export interface Capability {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export interface SectionHeaderProps {
+  label?: string;
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+}
