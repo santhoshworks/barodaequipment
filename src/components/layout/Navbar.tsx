@@ -67,9 +67,6 @@ export default function Navbar() {
         <a href="/login" className="navbar-login">
           Login
         </a>
-        <a href="/#contact" className="navbar-cta">
-          Get a Quote
-        </a>
 
         <button
           className="nav-hamburger"
@@ -136,9 +133,6 @@ export default function Navbar() {
           )}
           <a href="/login" className="nav-mobile-login" onClick={() => setMobileOpen(false)}>
             Login
-          </a>
-          <a href="/#contact" className="btn btn-primary" onClick={() => setMobileOpen(false)}>
-            Get a Quote
           </a>
         </div>
       )}

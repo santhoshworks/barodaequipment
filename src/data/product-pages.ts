@@ -31,20 +31,6 @@ export interface ProjectRef {
   year: string;
 }
 
-export interface EnquiryChecklist {
-  items: string[];
-}
-
-export interface DesignCodeOption {
-  value: string;
-  label: string;
-}
-
-export interface MaterialOption {
-  value: string;
-  label: string;
-}
-
 export interface RelatedProduct {
   slug: string;
   title: string;
@@ -80,11 +66,6 @@ export interface ProductPageData {
   specs: SpecRow[];
   highlights: HighlightCard[];
   projectRefs: ProjectRef[];
-  enquiryTitle: string;
-  enquiryDescription: string;
-  enquiryChecklist: string[];
-  designCodes: DesignCodeOption[];
-  materials: MaterialOption[];
   relatedProducts: RelatedProduct[];
   projectList: ProjectListEntry[];
 }
@@ -203,38 +184,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'Air Liquide India', endUser: 'Air Liquide', equipment: 'Cryogenic receivers, -196°C', qty: 4, year: '2019' },
       { client: 'Adani Ports & SEZ', endUser: 'Adani LNG Terminal', equipment: 'LPG separators, large diameter', qty: 3, year: '2019' },
       { client: 'GAIL India Ltd', endUser: 'GAIL Pata', equipment: 'HP/MP separators, CS & SS', qty: 7, year: '2018' },
-    ],
-    enquiryTitle: 'Get Pressure Vessel Pricing',
-    enquiryDescription:
-      'Share your design requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Design code & stamp requirement',
-      'Shell & head material',
-      'Design pressure & temperature',
-      'Shell diameter & length',
-      'Nozzle schedule',
-      'Quantity & delivery timeline',
-      'Third-party inspection agency',
-    ],
-    designCodes: [
-      { value: 'asme-viii-1', label: 'ASME Sec. VIII Div. 1' },
-      { value: 'asme-viii-2', label: 'ASME Sec. VIII Div. 2' },
-      { value: 'pd-5500', label: 'PD 5500' },
-      { value: 'en-13445', label: 'EN 13445' },
-      { value: 'ibr', label: 'IBR' },
-      { value: 'is-2825', label: 'IS 2825' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs-sa516', label: 'Carbon Steel (SA-516-70)' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'duplex-2205', label: 'Duplex 2205' },
-      { value: 'alloy-p11-p22', label: 'Alloy Steel P11/P22' },
-      { value: 'hastelloy', label: 'Hastelloy' },
-      { value: 'inconel', label: 'Inconel' },
-      { value: 'titanium', label: 'Titanium' },
-      { value: 'other', label: 'Other' },
     ],
     relatedProducts: [
       {
@@ -395,38 +344,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'Shell Global Solutions', endUser: 'Shell Hazira', equipment: 'Shell & tube exchangers, Duplex 2205', qty: 3, year: '2020' },
       { client: 'Air Liquide India', endUser: 'Air Liquide', equipment: 'Cryogenic heat exchangers', qty: 2, year: '2019' },
     ],
-    enquiryTitle: 'Get Heat Exchanger Pricing',
-    enquiryDescription:
-      'Share your thermal design requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Design code & TEMA class',
-      'Exchanger type (shell & tube, air cooled, etc.)',
-      'Shell & tube side materials',
-      'Operating pressure & temperature',
-      'Heat duty / thermal datasheet',
-      'Quantity & delivery timeline',
-      'Third-party inspection agency',
-    ],
-    designCodes: [
-      { value: 'asme-viii-1', label: 'ASME Sec. VIII Div. 1' },
-      { value: 'tema-r', label: 'TEMA Class R' },
-      { value: 'tema-c', label: 'TEMA Class C' },
-      { value: 'tema-b', label: 'TEMA Class B' },
-      { value: 'api-660', label: 'API 660' },
-      { value: 'api-661', label: 'API 661' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs-sa516', label: 'Carbon Steel (SA-516-70)' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'duplex-2205', label: 'Duplex 2205' },
-      { value: 'cuni', label: 'CuNi 90/10' },
-      { value: 'titanium', label: 'Titanium' },
-      { value: 'hastelloy', label: 'Hastelloy' },
-      { value: 'inconel', label: 'Inconel' },
-      { value: 'other', label: 'Other' },
-    ],
     relatedProducts: [
       {
         slug: 'pressure-vessels',
@@ -585,37 +502,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'Albemarle Lithium', endUser: 'Albemarle', equipment: '56 atmospheric tanks, 248 MT', qty: 56, year: '2019' },
       { client: 'PI Industries', endUser: 'PI Industries', equipment: 'Six storage tanks, 35-100 KL', qty: 6, year: '2010' },
     ],
-    enquiryTitle: 'Get Storage Tank Pricing',
-    enquiryDescription:
-      'Share your storage requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Design code (API 650, BS 2594, etc.)',
-      'Tank type (vertical / horizontal)',
-      'Material of construction',
-      'Capacity and dimensions',
-      'Product to be stored',
-      'Quantity & delivery timeline',
-      'Site location',
-    ],
-    designCodes: [
-      { value: 'api-650', label: 'API 650' },
-      { value: 'api-620', label: 'API 620' },
-      { value: 'bs-2594', label: 'BS 2594' },
-      { value: 'en-12285', label: 'EN 12285' },
-      { value: 'asme', label: 'ASME' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'ss-310s', label: 'SS 310S' },
-      { value: 'duplex', label: 'Duplex / Super Duplex' },
-      { value: 'smo', label: 'SMO (6% Mo)' },
-      { value: 'hastelloy', label: 'Hastelloy' },
-      { value: 'titanium', label: 'Titanium' },
-      { value: 'other', label: 'Other' },
-    ],
     relatedProducts: [
       {
         slug: 'pressure-vessels',
@@ -773,36 +659,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'Bromine Industries', endUser: 'Global bromine transport', equipment: 'Liquid Bromine Isotainers, lead-lined', qty: 4, year: '2022' },
       { client: 'Bulk Cargo Solutions', endUser: 'Bulk solid transport', equipment: 'BK2 certified containers', qty: 8, year: '2021' },
     ],
-    enquiryTitle: 'Get Portable Tank Pricing',
-    enquiryDescription:
-      'Share your transport requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Cargo type & hazard classification',
-      'Design code & certification required',
-      'Tank capacity & dimensions',
-      'Frame type (ISO 14196 / freestanding)',
-      'Operating pressure & temperature',
-      'Quantity & delivery timeline',
-      'Destination country',
-    ],
-    designCodes: [
-      { value: 'asme-viii-1', label: 'ASME Sec. VIII Div. 1' },
-      { value: 'imdg', label: 'IMDG' },
-      { value: 'adr', label: 'ADR' },
-      { value: 'rid', label: 'RID' },
-      { value: 'us-dot', label: 'US DoT' },
-      { value: 'uk-dft', label: 'UK DfT' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'duplex', label: 'Duplex / Super Duplex' },
-      { value: 'hastelloy', label: 'Hastelloy' },
-      { value: 'lead-lined', label: 'Lead Lined' },
-      { value: 'other', label: 'Other' },
-    ],
     relatedProducts: [
       { slug: 'pressure-vessels', title: 'Pressure Vessels', description: 'ASME, IBR and PED certified pressure vessels.', image: '/prod-pressure-vessel.webp' },
       { slug: 'skid-mounted-assemblies', title: 'Skid Mounted Assemblies', description: 'Complete process skids with vessels, piping and instruments.', image: '/prod-skid.webp' },
@@ -888,37 +744,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'Samsung Engineering', endUser: 'HPCL Mumbai', equipment: 'HP process piping, SS 316L', qty: 1, year: '2022' },
       { client: 'L&T Hydrocarbon', endUser: 'BPCL Kochi', equipment: 'Alloy steel piping spools, PWHT', qty: 1, year: '2021' },
       { client: 'Fluor Daniel India', endUser: 'ONGC Hazira', equipment: 'CS & SS piping, ASME B31.3', qty: 1, year: '2021' },
-    ],
-    enquiryTitle: 'Get Pressure Piping Pricing',
-    enquiryDescription:
-      'Share your piping requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Design code & specification',
-      'Pipe material & grade',
-      'Pressure & temperature ratings',
-      'Pipe sizes & schedule',
-      'Stress analysis requirement',
-      'Quantity & delivery timeline',
-      'Third-party inspection agency',
-    ],
-    designCodes: [
-      { value: 'asme-b31-3', label: 'ASME B31.3' },
-      { value: 'asme-viii-1', label: 'ASME Sec. VIII Div. 1' },
-      { value: 'ibr', label: 'IBR' },
-      { value: 'bs', label: 'BS Standards' },
-      { value: 'api', label: 'API' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'duplex', label: 'Duplex / Super Duplex' },
-      { value: 'titanium', label: 'Titanium' },
-      { value: 'inconel', label: 'Inconel' },
-      { value: 'hastelloy', label: 'Hastelloy' },
-      { value: 'cuni', label: 'CuNi' },
-      { value: 'other', label: 'Other' },
     ],
     relatedProducts: [
       { slug: 'pressure-vessels', title: 'Pressure Vessels', description: 'ASME, IBR and PED certified pressure vessels.', image: '/prod-pressure-vessel.webp' },
@@ -1007,32 +832,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'BHEL', endUser: 'Thermal power station', equipment: 'Superheater headers, alloy steel', qty: 4, year: '2022' },
       { client: 'L&T Power', endUser: 'Boiler OEM', equipment: 'Steam drums & blow down tanks', qty: 2, year: '2021' },
     ],
-    enquiryTitle: 'Get Boiler Parts Pricing',
-    enquiryDescription:
-      'Share your boiler component requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Component type (header, drum, coil, etc.)',
-      'Design code & stamp requirement',
-      'Material specification',
-      'Operating pressure & temperature',
-      'Dimensions & quantity',
-      'Delivery timeline',
-      'Third-party inspection agency',
-    ],
-    designCodes: [
-      { value: 'asme-sec-i', label: 'ASME Sec I' },
-      { value: 'asme-viii-1', label: 'ASME Sec. VIII Div. 1' },
-      { value: 'ibr', label: 'IBR 1950' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'alloy', label: 'Alloy Steel (P11/P22/P91)' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'inconel', label: 'Inconel' },
-      { value: 'other', label: 'Other' },
-    ],
     relatedProducts: [
       { slug: 'pressure-vessels', title: 'Pressure Vessels', description: 'ASME, IBR and PED certified pressure vessels.', image: '/prod-pressure-vessel.webp' },
       { slug: 'pressure-piping', title: 'Pressure Piping', description: 'ASME B31.3 piping spools and high-pressure pipe work.', image: '/prod-piping.webp' },
@@ -1115,32 +914,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'Samsung Engineering', endUser: 'Offshore platform', equipment: 'Structural modules, API standards', qty: 1, year: '2022' },
       { client: 'L&T Hydrocarbon', endUser: 'Refinery', equipment: 'Pipe racks & equipment supports', qty: 1, year: '2021' },
       { client: 'Fluor Daniel', endUser: 'ONGC', equipment: 'Onshore structural steel', qty: 1, year: '2020' },
-    ],
-    enquiryTitle: 'Get Structural Fabrication Pricing',
-    enquiryDescription:
-      'Share your structural requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Design code & standard',
-      'Structure type & application',
-      'Material grades',
-      'Overall dimensions & tonnage',
-      'Surface treatment requirements',
-      'Quantity & delivery timeline',
-      'Trial assembly requirement',
-    ],
-    designCodes: [
-      { value: 'aisc', label: 'AISC' },
-      { value: 'api', label: 'API' },
-      { value: 'aws-d1-1', label: 'AWS D1.1' },
-      { value: 'is', label: 'IS Standards' },
-      { value: 'other', label: 'Other / Client Spec' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'structural', label: 'Structural Steel' },
-      { value: 'ss', label: 'Stainless Steel' },
-      { value: 'galvanized', label: 'Hot-Dip Galvanized' },
-      { value: 'other', label: 'Other' },
     ],
     relatedProducts: [
       { slug: 'skid-mounted-assemblies', title: 'Skid Mounted Assemblies', description: 'Complete process skids with structural frames.', image: '/prod-skid.webp' },
@@ -1228,31 +1001,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'Air Products', endUser: 'Gas processing', equipment: 'Metering skid with E&I', qty: 1, year: '2021' },
       { client: 'Reliance Industries', endUser: 'Jamnagar', equipment: 'Pump skid assemblies', qty: 3, year: '2020' },
     ],
-    enquiryTitle: 'Get Skid Assembly Pricing',
-    enquiryDescription:
-      'Share your skid requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Skid type & application',
-      'Process description',
-      'Equipment list (static & rotary)',
-      'E&I integration scope',
-      'Overall dimensions & weight limits',
-      'Quantity & delivery timeline',
-      'Function test requirements',
-    ],
-    designCodes: [
-      { value: 'asme-viii-1', label: 'ASME Sec. VIII Div. 1' },
-      { value: 'asme-b31-3', label: 'ASME B31.3' },
-      { value: 'client-spec', label: 'Client Specification' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'alloy', label: 'Low Alloy Steel' },
-      { value: 'other', label: 'Other' },
-    ],
     relatedProducts: [
       { slug: 'pressure-vessels', title: 'Pressure Vessels', description: 'ASME, IBR and PED certified pressure vessels.', image: '/prod-pressure-vessel.webp' },
       { slug: 'pressure-piping', title: 'Pressure Piping', description: 'ASME B31.3 piping spools.', image: '/prod-piping.webp' },
@@ -1332,29 +1080,6 @@ export const productPages: Record<string, ProductPageData> = {
     projectRefs: [
       { client: 'Offshore Solutions', endUser: 'North Sea operations', equipment: 'Cargo containers, DNV 2.7-1', qty: 12, year: '2022' },
       { client: 'Adani Ports', endUser: 'Offshore terminal', equipment: 'Chemical tank containers', qty: 4, year: '2021' },
-    ],
-    enquiryTitle: 'Get Offshore Container Pricing',
-    enquiryDescription:
-      'Share your offshore container requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Container type & application',
-      'Design standard (DNV 2.7-1, EN 12079)',
-      'Dimensions & payload capacity',
-      'Lifting arrangement',
-      'Surface treatment specification',
-      'Quantity & delivery timeline',
-    ],
-    designCodes: [
-      { value: 'dnv-2-7-1', label: 'DNV 2.7-1' },
-      { value: 'en-12079', label: 'EN 12079' },
-      { value: 'client-spec', label: 'Client Specification' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'structural', label: 'Structural Steel' },
-      { value: 'ss', label: 'Stainless Steel' },
-      { value: 'other', label: 'Other' },
     ],
     relatedProducts: [
       { slug: 'structures', title: 'Structures', description: 'Offshore and onshore structural fabrication.', image: '/prod-structures.webp' },
@@ -1438,34 +1163,6 @@ export const productPages: Record<string, ProductPageData> = {
       { client: 'FLSmidth', endUser: 'Cement plant', equipment: 'Cyclones & hot air generators', qty: 1, year: '2023' },
       { client: 'Siemens', endUser: 'Power generation', equipment: 'Static compressor parts', qty: 1, year: '2022' },
       { client: 'Howden Air & Gas', endUser: 'Process industry', equipment: 'Rotary air preheaters', qty: 2, year: '2021' },
-    ],
-    enquiryTitle: 'Get Custom Equipment Pricing',
-    enquiryDescription:
-      'Share your equipment requirements with us. Our engineering team will review and respond with a competitive quotation within 48 hours.',
-    enquiryChecklist: [
-      'Equipment type & application',
-      'Design drawings or specifications',
-      'Material of construction',
-      'Dimensions & weight',
-      'Certification requirements (CE, GOST, etc.)',
-      'Quantity & delivery timeline',
-      'IP / confidentiality requirements',
-    ],
-    designCodes: [
-      { value: 'asme', label: 'ASME' },
-      { value: 'ce', label: 'CE Marking / PED' },
-      { value: 'gost', label: 'GOST-R / GOST-K' },
-      { value: 'client-spec', label: 'Client Specification' },
-      { value: 'other', label: 'Other / Not decided' },
-    ],
-    materials: [
-      { value: 'cs', label: 'Carbon Steel' },
-      { value: 'ss-304', label: 'SS 304 / 304L' },
-      { value: 'ss-316', label: 'SS 316 / 316L' },
-      { value: 'duplex', label: 'Duplex / Super Duplex' },
-      { value: 'hastelloy', label: 'Hastelloy' },
-      { value: 'inconel', label: 'Inconel' },
-      { value: 'other', label: 'Other' },
     ],
     relatedProducts: [
       { slug: 'pressure-vessels', title: 'Pressure Vessels', description: 'ASME, IBR and PED certified pressure vessels.', image: '/prod-pressure-vessel.webp' },

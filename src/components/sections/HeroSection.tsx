@@ -32,9 +32,6 @@ export default function HeroSection() {
           <a href="/#products" className="btn btn-primary">
             Explore Products
           </a>
-          <a href="/#contact" className="btn btn-outline">
-            Get a Quote
-          </a>
         </div>
       </div>
 

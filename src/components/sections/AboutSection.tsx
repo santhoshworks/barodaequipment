@@ -44,9 +44,6 @@ export default function AboutSection() {
               ))}
             </ul>
 
-            <a href="/#contact" className="btn btn-secondary" style={{ display: 'inline-block', marginTop: '1.5rem' }}>
-              Learn More About Us
-            </a>
           </div>
         </div>
       </div>

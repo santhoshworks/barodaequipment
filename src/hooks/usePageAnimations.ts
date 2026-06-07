@@ -114,21 +114,11 @@ export function usePageAnimations() {
     gsap.from('.cap-item', { ...st, opacity: 0, y: 32, duration: 0.6, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: '.caps-grid', start: 'top 85%', once: true } });
 
-    // CTA band
-    gsap.from('.cta-band-inner', { ...st, opacity: 0, scale: 0.97, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: '.cta-band', start: 'top 85%', once: true } });
-
     // Location
     gsap.from('.location-info', { ...st, opacity: 0, x: -50, duration: 1, ease: 'power3.out',
       scrollTrigger: { trigger: '.location-section', start: 'top 85%', once: true } });
     gsap.from('.location-map', { ...st, opacity: 0, scale: 0.98, duration: 1, ease: 'power3.out',
       scrollTrigger: { trigger: '.location-section', start: 'top 85%', once: true } });
-
-    // Contact
-    gsap.from('.contact-info', { ...st, opacity: 0, x: -40, duration: 0.9, ease: 'power3.out',
-      scrollTrigger: { trigger: '.contact-grid', start: 'top 80%', once: true } });
-    gsap.from('.contact-form', { ...st, opacity: 0, y: 40, duration: 0.9, ease: 'power3.out',
-      scrollTrigger: { trigger: '.contact-grid', start: 'top 80%', once: true } });
 
     // Recalculate all trigger positions after DOM is fully settled
     ScrollTrigger.refresh();

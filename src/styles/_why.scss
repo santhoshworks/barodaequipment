@@ -1,0 +1,130 @@
+@use './variables' as *;
+
+.why-section {
+  padding: 100px 0;
+  background: $white;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    .why-image-panel { display: none; }
+  }
+}
+
+.why-accordion {
+  h2 { margin: 16px 0 32px; }
+}
+
+.acc-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.acc-item {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(28, 10, 2, 0.08);
+  transition: border-color 0.2s;
+
+  &.active {
+    border-color: $teal-mid;
+
+    .acc-btn { background: rgba(217, 107, 26, 0.06); }
+    .acc-arrow { transform: rotate(180deg); }
+    .acc-body {
+      max-height: 200px;
+      padding: 0 20px 18px;
+    }
+  }
+}
+
+.acc-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: $font-family-base;
+  font-size: 16px;
+  font-weight: 600;
+  color: $navy;
+  transition: background 0.2s;
+
+  &:hover { background: $bg-light; }
+}
+
+.acc-icon {
+  font-size: 12px;
+  font-weight: 800;
+  color: $teal-mid;
+  letter-spacing: 0.08em;
+  min-width: 24px;
+}
+
+.acc-arrow {
+  margin-left: auto;
+  font-size: 18px;
+  color: $teal-mid;
+  transition: transform 0.3s;
+}
+
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  padding: 0 20px;
+
+  p {
+    font-size: 15px;
+    color: $text-muted;
+    line-height: 1.65;
+  }
+}
+
+.why-image-panel {
+  position: sticky;
+  top: 100px;
+}
+
+.why-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: visible;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: $shadow-hover;
+    transition: opacity 0.4s ease;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.why-img-blob {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(135deg, #FFB347, #F4A05A);
+  border-radius: 50%;
+  bottom: -8%;
+  right: -8%;
+  opacity: 0.2;
+  filter: blur(36px);
+  z-index: 0;
+}

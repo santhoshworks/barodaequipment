@@ -1,0 +1,59 @@
+@use './variables' as *;
+
+.clients-section {
+  padding: 80px 0 0;
+  background: $white;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  border-top: 1px solid rgba(28, 10, 2, 0.07);
+  border-bottom: 1px solid rgba(28, 10, 2, 0.07);
+  padding: 28px 0;
+  margin-top: 48px;
+  background: $bg-light;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  padding: 10px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  color: $body-blue;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+
+  &::after {
+    content: '\00B7';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $teal-mid;
+    font-size: 20px;
+  }
+
+  &:hover {
+    opacity: 1;
+    color: $navy;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

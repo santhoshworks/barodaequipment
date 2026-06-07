@@ -18,7 +18,6 @@ const footerLinks = {
     { label: 'Clients',        href: '/#clients' },
     { label: 'Certifications', href: '/#certifications' },
     { label: 'Location',       href: '/#location' },
-    { label: 'Contact',        href: '/#contact' },
   ],
 };
 
@@ -44,6 +43,15 @@ export default function Footer() {
           </div>
 
           <div className="footer-section">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="mailto:info@barodaequip.com">info@barodaequip.com</a></li>
+              <li><a href="tel:+912652123456">+91 265 212 3456</a></li>
+              <li>Baroda (Vadodara), Gujarat, India</li>
+            </ul>
+          </div>
+
+          <div className="footer-section">
             <h5>Company</h5>
             <ul>
               {footerLinks.company.map((link) => (
@@ -52,14 +60,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer-section">
-            <h5>Contact</h5>
-            <ul>
-              <li><a href="mailto:info@barodaequip.com">info@barodaequip.com</a></li>
-              <li><a href="tel:+912652123456">+91 265 212 3456</a></li>
-              <li>Baroda (Vadodara), Gujarat, India</li>
-            </ul>
-          </div>
         </div>
 
         <div className="footer-bottom">

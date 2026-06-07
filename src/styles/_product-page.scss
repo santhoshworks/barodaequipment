@@ -397,68 +397,6 @@
 }
 
 // ═══════════════════════════════════════════════════════════════════
-// ENQUIRY SECTION
-// ═══════════════════════════════════════════════════════════════════
-
-.prod-enquiry {
-  padding: 100px 0;
-  background: var(--bg-light);
-}
-
-.enquiry-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 80px;
-  align-items: start;
-
-  @include media-breakpoint-down(lg) { grid-template-columns: 1fr; gap: 48px; }
-}
-
-.enquiry-info {
-  h2 { margin-bottom: 16px; }
-  > p { color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; }
-}
-
-.enquiry-checklist {
-  h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 28px;
-    padding: 0;
-  }
-
-  li { font-size: 14px; color: var(--body-blue); }
-}
-
-.enquiry-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  a {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--teal-mid);
-    transition: color 0.2s;
-    &:hover { color: var(--teal); }
-  }
-}
-
-.enquiry-form {
-  background: var(--white);
-}
-
 // ═══════════════════════════════════════════════════════════════════
 // FULL PROJECT LIST PAGE
 // ═══════════════════════════════════════════════════════════════════

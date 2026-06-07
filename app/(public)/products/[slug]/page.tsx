@@ -2,8 +2,6 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { productPages, productSlugs } from '@/data/product-pages';
-import { EnquiryForm } from './EnquiryForm';
-
 export function generateStaticParams() {
   return productSlugs.map((slug) => ({ slug }));
 }
@@ -52,10 +50,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <h1>{product.title}</h1>
           <p>{product.heroDescription}</p>
           <div className="hero-actions">
-            <a href="#enquiry" className="btn btn-primary">
-              Request a Quote
-            </a>
-            <a href="#specs" className="btn btn-outline">
+            <a href="#specs" className="btn btn-primary">
               View Specifications
             </a>
           </div>
@@ -246,38 +241,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* ═══ ENQUIRY FORM ═══ */}
-      <section className="prod-enquiry" id="enquiry">
-        <div className="container-inner">
-          <div className="enquiry-grid">
-            <div className="enquiry-info">
-              <span className="section-label">Request a Quote</span>
-              <h2>{product.enquiryTitle}</h2>
-              <p>{product.enquiryDescription}</p>
-              <div className="enquiry-checklist">
-                <h4>Include in your enquiry:</h4>
-                <ul>
-                  {product.enquiryChecklist.map((item) => (
-                    <li key={item}>✓ {item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="enquiry-contact">
-                <a href="mailto:info@barodaequip.com">
-                  ✉ info@barodaequip.com
-                </a>
-                <Link href="/#contact">📍 Vadodara, Gujarat, India</Link>
-              </div>
-            </div>
-            <EnquiryForm
-              designCodes={product.designCodes}
-              materials={product.materials}
-              productTitle={product.title}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ═══ RELATED PRODUCTS ═══ */}
       <section className="related-products">
         <div className="container-inner">
@@ -292,7 +255,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 href={
                   rp.slug
                     ? `/products/${rp.slug}`
-                    : '/#contact'
+                    : '/#products'
                 }
                 className="product-card"
               >
