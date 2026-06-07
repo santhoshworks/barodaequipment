@@ -39,7 +39,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
         <Script
-          src="https://cdn.jsdelivr.net/gh/darkroomengineering/lenis@latest/bundled/lenis.js"
+          src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"
           strategy="beforeInteractive"
         />
       </head>

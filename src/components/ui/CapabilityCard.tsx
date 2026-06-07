@@ -8,9 +8,8 @@ interface CapabilityCardProps {
 export default function CapabilityCard({ capability }: CapabilityCardProps) {
   return (
     <div className="cap-item">
-      <span className="cap-icon" aria-hidden="true">{capability.icon}</span>
-      <h3>{capability.title}</h3>
-      <p>{capability.description}</p>
+      <div className="cap-value">{capability.value}</div>
+      <div className="cap-label">{capability.label}</div>
     </div>
   );
 }

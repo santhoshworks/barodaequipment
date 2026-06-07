@@ -80,51 +80,53 @@ export function usePageAnimations() {
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
     });
 
+    const st = { immediateRender: false };
+
     // Section headers
     gsap.utils.toArray<HTMLElement>('.section-header').forEach((el) => {
-      gsap.from(el, { opacity: 0, y: 48, duration: 0.9, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 80%' } });
+      gsap.from(el, { ...st, opacity: 0, y: 48, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
     });
 
     // Trust bar
-    gsap.from('.trust-logos img', { opacity: 0, y: 16, duration: 0.5, stagger: 0.1, ease: 'power2.out',
-      scrollTrigger: { trigger: '.trust-bar', start: 'top 90%' } });
+    gsap.from('.trust-logos img', { ...st, opacity: 0, y: 16, duration: 0.5, stagger: 0.1, ease: 'power2.out',
+      scrollTrigger: { trigger: '.trust-bar', start: 'top 90%', once: true } });
 
     // Stats count-up
-    gsap.from('.stat-item', { opacity: 0, y: 40, duration: 0.7, stagger: 0.15, ease: 'power3.out',
-      scrollTrigger: { trigger: '.stats-section', start: 'top 75%', onEnter: animateCounters } });
+    gsap.from('.stat-item', { ...st, opacity: 0, y: 40, duration: 0.7, stagger: 0.15, ease: 'power3.out',
+      scrollTrigger: { trigger: '.stats-section', start: 'top 80%', once: true, onEnter: animateCounters } });
 
     // Product cards
-    gsap.from('.product-card', { opacity: 0, y: 60, duration: 0.7, stagger: { each: 0.1, from: 'start' }, ease: 'power3.out',
-      scrollTrigger: { trigger: '.products-grid', start: 'top 80%' } });
+    gsap.from('.product-card', { ...st, opacity: 0, y: 60, duration: 0.7, stagger: { each: 0.1, from: 'start' }, ease: 'power3.out',
+      scrollTrigger: { trigger: '.products-grid', start: 'top 85%', once: true } });
 
     // About split
-    gsap.from('.about-image', { opacity: 0, x: -60, duration: 1, ease: 'power3.out',
-      scrollTrigger: { trigger: '.about-grid', start: 'top 75%' } });
-    gsap.from('.about-content', { opacity: 0, x: 60, duration: 1, ease: 'power3.out',
-      scrollTrigger: { trigger: '.about-grid', start: 'top 75%' } });
-    gsap.from('.about-list li', { opacity: 0, x: 24, duration: 0.5, stagger: 0.12, ease: 'power2.out',
-      scrollTrigger: { trigger: '.about-list', start: 'top 80%' } });
+    gsap.from('.about-image', { ...st, opacity: 0, x: -60, duration: 1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.about-grid', start: 'top 80%', once: true } });
+    gsap.from('.about-content', { ...st, opacity: 0, x: 60, duration: 1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.about-grid', start: 'top 80%', once: true } });
+    gsap.from('.about-list li', { ...st, opacity: 0, x: 24, duration: 0.5, stagger: 0.12, ease: 'power2.out',
+      scrollTrigger: { trigger: '.about-list', start: 'top 85%', once: true } });
 
     // Capability cards
-    gsap.from('.cap-item', { opacity: 0, y: 32, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: '.caps-grid', start: 'top 80%' } });
+    gsap.from('.cap-item', { ...st, opacity: 0, y: 32, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.caps-grid', start: 'top 85%', once: true } });
 
     // CTA band
-    gsap.from('.cta-band-inner', { opacity: 0, scale: 0.97, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: '.cta-band', start: 'top 80%' } });
+    gsap.from('.cta-band-inner', { ...st, opacity: 0, scale: 0.97, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.cta-band', start: 'top 85%', once: true } });
 
     // Location
-    gsap.from('.location-info', { opacity: 0, x: -50, duration: 1, ease: 'power3.out',
-      scrollTrigger: { trigger: '.location-section', start: 'top 80%' } });
-    gsap.from('.location-map', { opacity: 0, scale: 0.98, duration: 1, ease: 'power3.out',
-      scrollTrigger: { trigger: '.location-section', start: 'top 80%' } });
+    gsap.from('.location-info', { ...st, opacity: 0, x: -50, duration: 1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.location-section', start: 'top 85%', once: true } });
+    gsap.from('.location-map', { ...st, opacity: 0, scale: 0.98, duration: 1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.location-section', start: 'top 85%', once: true } });
 
     // Contact
-    gsap.from('.contact-info', { opacity: 0, x: -40, duration: 0.9, ease: 'power3.out',
-      scrollTrigger: { trigger: '.contact-grid', start: 'top 75%' } });
-    gsap.from('.contact-form', { opacity: 0, y: 40, duration: 0.9, ease: 'power3.out',
-      scrollTrigger: { trigger: '.contact-grid', start: 'top 75%' } });
+    gsap.from('.contact-info', { ...st, opacity: 0, x: -40, duration: 0.9, ease: 'power3.out',
+      scrollTrigger: { trigger: '.contact-grid', start: 'top 80%', once: true } });
+    gsap.from('.contact-form', { ...st, opacity: 0, y: 40, duration: 0.9, ease: 'power3.out',
+      scrollTrigger: { trigger: '.contact-grid', start: 'top 80%', once: true } });
 
     // Recalculate all trigger positions after DOM is fully settled
     ScrollTrigger.refresh();

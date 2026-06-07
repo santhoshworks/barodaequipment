@@ -7,9 +7,9 @@ export default function CapabilitiesSection() {
     <section className="section capabilities-section" id="capabilities">
       <div className="container-inner">
         <SectionHeader
-          label="What We Do"
-          title="End-to-End Manufacturing Capabilities"
-          subtitle="From design to delivery — every step handled in-house to the highest standards."
+          label="Facility & Capabilities"
+          title="Built for Scale"
+          subtitle="Our Vadodara facility is equipped to handle projects of any size — from single-unit production runs to large multi-equipment orders."
         />
         <div className="caps-grid">
           {capabilities.map((cap) => (

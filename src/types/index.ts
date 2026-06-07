@@ -23,9 +23,8 @@ export interface Certification {
 
 export interface Capability {
   id: string;
-  icon: string;
-  title: string;
-  description: string;
+  value: string;
+  label: string;
 }
 
 export interface NavLink {
