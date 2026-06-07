@@ -29,7 +29,6 @@ export default function RootLayout({
       <head>
         <link rel="preload" as="image" href="/nav-bg.jpg" />
         <link rel="preload" as="image" href="/hero-bg.jpg" />
-        {/* GSAP & Lenis */}
         <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
           strategy="beforeInteractive"
@@ -43,9 +42,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className="flex flex-col min-h-screen">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

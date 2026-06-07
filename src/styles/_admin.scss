@@ -1,0 +1,287 @@
+@use './variables' as *;
+
+// ═══════════════════════════════════════════════════════════════════
+// ADMIN LAYOUT
+// ═══════════════════════════════════════════════════════════════════
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// SIDEBAR
+// ═══════════════════════════════════════════════════════════════════
+
+.admin-sidebar {
+  width: 260px;
+  background: $navy;
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.admin-sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  img { filter: brightness(10); }
+}
+
+.admin-sidebar-badge {
+  display: inline-block;
+  background: var(--mint);
+  color: $white;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.admin-sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-nav-link {
+  display: block;
+  padding: 10px 1.5rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+
+  &:hover {
+    color: $white;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  &.active {
+    color: $white;
+    background: rgba(255, 255, 255, 0.06);
+    border-left-color: var(--mint);
+    font-weight: 500;
+  }
+}
+
+.admin-sidebar-footer {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// MAIN CONTENT
+// ═══════════════════════════════════════════════════════════════════
+
+.admin-main {
+  flex: 1;
+  margin-left: 260px;
+  background: $bg-light;
+  min-height: 100vh;
+}
+
+.admin-page {
+  padding: 2rem 2.5rem;
+  max-width: 1000px;
+}
+
+.admin-page-header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $navy;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// DASHBOARD CARDS
+// ═══════════════════════════════════════════════════════════════════
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(lg) { grid-template-columns: repeat(4, 1fr); }
+}
+
+.admin-stat-card {
+  background: $white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: $shadow-card;
+
+  .admin-stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .admin-stat-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// ADMIN FORMS
+// ═══════════════════════════════════════════════════════════════════
+
+.admin-form-card {
+  background: $white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: $shadow-card;
+}
+
+.admin-form {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @include media-breakpoint-up(sm) { grid-template-columns: 1fr 1fr; }
+  }
+
+  .form-group { margin-bottom: 1.25rem; }
+
+  .form-group-full { grid-column: 1 / -1; }
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(28, 10, 2, 0.06);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// ADMIN TABLE
+// ═══════════════════════════════════════════════════════════════════
+
+.admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $text-muted;
+    border-bottom: 2px solid rgba(28, 10, 2, 0.08);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(28, 10, 2, 0.06);
+    color: $navy;
+  }
+
+  tr:hover td { background: rgba(28, 10, 2, 0.015); }
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+
+  &.new       { background: #e3f2fd; color: #1565c0; }
+  &.responded { background: #e8f5e9; color: #2e7d32; }
+  &.open      { background: #e8f5e9; color: #2e7d32; }
+  &.closed    { background: #fafafa; color: #757575; }
+  &.pending   { background: #fff8e1; color: #f57f17; }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// FILE UPLOAD
+// ═══════════════════════════════════════════════════════════════════
+
+.file-upload-zone {
+  border: 2px dashed rgba(28, 10, 2, 0.15);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: var(--mint);
+    background: rgba(255, 140, 58, 0.03);
+  }
+
+  p {
+    color: $text-muted;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .file-upload-label {
+    color: var(--teal);
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  input[type="file"] { display: none; }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// NAVBAR LOGIN LINK
+// ═══════════════════════════════════════════════════════════════════
+
+.navbar-login {
+  display: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-left: auto;
+
+  @include media-breakpoint-up(lg) { display: block; }
+
+  &:hover { color: $white; }
+}

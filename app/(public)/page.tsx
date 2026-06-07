@@ -1,7 +1,3 @@
-'use client';
-
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import TrustBar from '@/components/sections/TrustBar';
 import StatsSection from '@/components/sections/StatsSection';
@@ -11,14 +7,12 @@ import CapabilitiesSection from '@/components/sections/CapabilitiesSection';
 import CTABand from '@/components/sections/CTABand';
 import LocationSection from '@/components/sections/LocationSection';
 import ContactSection from '@/components/sections/ContactSection';
-import { usePageAnimations } from '@/hooks/usePageAnimations';
+import HomeAnimations from '@/components/HomeAnimations';
 
 export default function Home() {
-  usePageAnimations();
-
   return (
     <>
-      <Navbar />
+      <HomeAnimations />
       <main>
         <HeroSection />
         <TrustBar />
@@ -30,7 +24,6 @@ export default function Home() {
         <LocationSection />
         <ContactSection />
       </main>
-      <Footer />
     </>
   );
 }

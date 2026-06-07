@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SectionHeader from '@/components/ui/SectionHeader';
 
 const highlights = [
@@ -14,13 +15,13 @@ export default function AboutSection() {
       <div className="container-inner">
         <div className="about-grid">
           <div className="about-image">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/about.png"
               alt="Baroda Equipment workshop"
               className="about-img"
-              loading="lazy"
-              decoding="async"
+              width={600}
+              height={400}
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
@@ -43,7 +44,7 @@ export default function AboutSection() {
               ))}
             </ul>
 
-            <a href="#contact" className="btn btn-secondary" style={{ display: 'inline-block', marginTop: '1.5rem' }}>
+            <a href="/#contact" className="btn btn-secondary" style={{ display: 'inline-block', marginTop: '1.5rem' }}>
               Learn More About Us
             </a>
           </div>

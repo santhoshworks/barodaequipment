@@ -1,15 +1,18 @@
+import Image from 'next/image';
+
 const footerLinks = {
   products: [
-    { label: 'Pressure Vessels',     href: '/products/pressure-vessels' },
-    { label: 'Heat Exchangers',      href: '/products/heat-exchangers' },
-    { label: 'Storage Tanks',        href: '/products/storage-tanks' },
-    { label: 'Structural Fabrication', href: '/products/structural-fabrication' },
+    { label: 'Pressure Vessels',       href: '/products/pressure-vessels' },
+    { label: 'Heat Exchangers',        href: '/products/heat-exchangers' },
+    { label: 'Storage Tanks',          href: '/products/storage-tanks' },
+    { label: 'Skid Mounted Assemblies', href: '/products/skid-mounted-assemblies' },
+    { label: 'Offshore Containers',    href: '/products/offshore-containers' },
   ],
   company: [
-    { label: 'About Us',        href: '#about' },
-    { label: 'Certifications',  href: '#certifications' },
-    { label: 'Location',        href: '#location' },
-    { label: 'Contact',         href: '#contact' },
+    { label: 'About Us',       href: '/#about' },
+    { label: 'Certifications', href: '/#certifications' },
+    { label: 'Location',       href: '/#location' },
+    { label: 'Contact',        href: '/#contact' },
   ],
 };
 
@@ -21,8 +24,7 @@ export default function Footer() {
       <div className="container-inner">
         <div className="footer-grid">
           <div className="footer-section footer-brand">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Baroda Equipment & Vessels" width={198} height={36} />
+            <Image src="/logo.png" alt="Baroda Equipment & Vessels" width={198} height={36} />
             <p>Heavy metal engineering and precision equipment manufacturing since 1990.</p>
           </div>
 

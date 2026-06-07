@@ -1,0 +1,30 @@
+@use './variables' as *;
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+
+  @include media-breakpoint-up(lg) { grid-template-columns: 1fr 1.5fr; }
+}
+
+.location-info {
+  h3 { color: $navy; margin-bottom: 1rem; }
+
+  address {
+    color: $text-muted;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    p { margin: 0; }
+  }
+}
+
+.location-contact {
+  p {
+    color: $text-muted;
+    margin-bottom: 0.5rem;
+    font-size: 15px;
+    a { color: var(--teal); }
+  }
+}

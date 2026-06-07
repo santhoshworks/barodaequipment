@@ -1,14 +1,16 @@
+import Image from 'next/image';
+
 export default function HeroSection() {
   return (
     <section className="hero" id="hero">
       <div className="hero-bg">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/hero-bg.jpg"
           alt="Industrial equipment manufacturing"
           className="hero-img"
-          fetchPriority="high"
-          decoding="async"
+          fill
+          priority
+          sizes="100vw"
         />
         <div className="hero-overlay"></div>
       </div>
@@ -27,10 +29,10 @@ export default function HeroSection() {
         </p>
 
         <div className="hero-actions">
-          <a href="#products" className="btn btn-primary">
+          <a href="/#products" className="btn btn-primary">
             Explore Products
           </a>
-          <a href="#contact" className="btn btn-outline">
+          <a href="/#contact" className="btn btn-outline">
             Get a Quote
           </a>
         </div>

@@ -1,0 +1,40 @@
+@use './variables' as *;
+
+.capabilities-section { background: var(--white); }
+
+.caps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(28, 10, 2, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) { grid-template-columns: repeat(2, 1fr); }
+  @include media-breakpoint-down(sm) { grid-template-columns: 1fr; }
+}
+
+.cap-item {
+  background: $white;
+  padding: 40px 32px;
+  text-align: center;
+  transition: background 0.2s;
+
+  &:hover { background: var(--bg-light); }
+}
+
+.cap-value {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.cap-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,32 @@
+@use './variables' as *;
+
+.cta-band {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-mid) 100%);
+  padding: 4rem 0;
+}
+
+.cta-band-inner {
+  text-align: center;
+
+  h2 { color: $white; margin-bottom: 1rem; }
+  p  { color: rgba(255,255,255,0.85); font-size: 18px; margin-bottom: 2rem; }
+}
+
+.cta-band-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .btn-primary {
+    background: $white;
+    color: var(--teal);
+    border-color: $white;
+    &:hover { background: rgba(255,255,255,0.9); color: var(--teal); }
+  }
+
+  .btn-outline {
+    border-color: rgba(255,255,255,0.6);
+    color: $white;
+  }
+}

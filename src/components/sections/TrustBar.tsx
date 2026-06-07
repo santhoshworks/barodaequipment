@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { certifications } from '@/data/certifications';
 
 export default function TrustBar() {
@@ -10,14 +11,11 @@ export default function TrustBar() {
         <div className="trust-logos">
           {certifications.map((cert) => (
             <div key={cert.id} className="trust-logo-item" title={cert.name}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={cert.image}
                 alt={cert.name}
                 width={cert.width}
                 height={cert.height}
-                loading="lazy"
-                decoding="async"
               />
             </div>
           ))}

@@ -36,9 +36,11 @@ export function usePageAnimations() {
       lenis.on('scroll', () => ScrollTrigger.update());
 
       // Smooth anchor navigation
-      document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((a) => {
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[href^="/#"]').forEach((a) => {
         a.addEventListener('click', (e) => {
-          const target = document.querySelector(a.getAttribute('href') || '');
+          const href = a.getAttribute('href') || '';
+          const hash = href.startsWith('/#') ? href.slice(1) : href;
+          const target = document.querySelector(hash);
           if (target) {
             e.preventDefault();
             lenis.scrollTo(target, { offset: -72, duration: 1.4 });

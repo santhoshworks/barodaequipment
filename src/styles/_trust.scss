@@ -1,0 +1,24 @@
+@use './variables' as *;
+
+.trust-bar {
+  background: var(--bg-light);
+  border-top: 1px solid rgba(28, 10, 2, 0.06);
+  border-bottom: 1px solid rgba(28, 10, 2, 0.06);
+  padding: 2rem 0;
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trust-logo-item {
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+  &:hover { opacity: 1; }
+}

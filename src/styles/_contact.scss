@@ -1,0 +1,96 @@
+@use './variables' as *;
+
+.contact-section { background: var(--bg-light); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @include media-breakpoint-up(lg) { grid-template-columns: 1fr 1.5fr; }
+}
+
+.contact-info {
+  h3 { color: $navy; margin-bottom: 1rem; }
+  p  { color: $text-muted; margin-bottom: 1.5rem; }
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(28, 10, 2, 0.06);
+
+    strong { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: $text-muted; }
+    a, span { color: $navy; font-size: 15px; }
+    a:hover { color: var(--teal); }
+
+    &:last-child { border-bottom: none; }
+  }
+}
+
+.contact-form { background: $white; border-radius: 8px; padding: 2rem; box-shadow: var(--shadow-card); }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  @include media-breakpoint-up(sm) { grid-template-columns: 1fr 1fr; }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 14px;
+  color: $navy;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(28, 10, 2, 0.15);
+  border-radius: 4px;
+  font-family: $font-family-base;
+  font-size: 15px;
+  color: $navy;
+  background: $white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+
+  &:focus {
+    border-color: var(--mint);
+    box-shadow: 0 0 0 3px rgba(255, 140, 58, 0.1);
+  }
+
+  &.is-invalid { border-color: #dc3545; }
+  &::placeholder { color: rgba(44, 20, 5, 0.4); }
+}
+
+textarea.form-control { resize: vertical; min-height: 120px; }
+
+.form-error {
+  font-size: 13px;
+  color: #dc3545;
+  margin-top: 4px;
+}
+
+.form-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 1.5rem;
+  font-size: 15px;
+}

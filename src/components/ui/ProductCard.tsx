@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Product } from '@/types';
 
 interface ProductCardProps {
@@ -9,12 +10,11 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="product-card">
       <div className="product-card-img">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={product.image}
           alt={product.name}
-          loading="lazy"
-          decoding="async"
+          fill
+          sizes="(max-width: 576px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
       </div>
       <div className="card-body">

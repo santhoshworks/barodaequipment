@@ -1,0 +1,58 @@
+@use './variables' as *;
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg-light;
+  padding: 2rem;
+}
+
+.auth-card {
+  background: $white;
+  border-radius: 12px;
+  box-shadow: $shadow-card;
+  padding: 3rem;
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-logo {
+  display: block;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  img { margin: 0 auto; }
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $navy;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: $text-muted;
+  margin-bottom: 2rem;
+}
+
+.auth-form {
+  .form-group { margin-bottom: 1.25rem; }
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 14px;
+  color: $text-muted;
+  margin-top: 1.5rem;
+
+  a { color: var(--teal); font-weight: 500; }
+}
