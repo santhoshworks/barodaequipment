@@ -268,20 +268,3 @@
   input[type="file"] { display: none; }
 }
 
-// ═══════════════════════════════════════════════════════════════════
-// NAVBAR LOGIN LINK
-// ═══════════════════════════════════════════════════════════════════
-
-.navbar-login {
-  display: none;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 15px;
-  font-weight: 400;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  margin-left: auto;
-
-  @include media-breakpoint-up(lg) { display: block; }
-
-  &:hover { color: $white; }
-}

@@ -1,3 +1,5 @@
+import { projectData } from './project-data';
+
 export interface ProductStat {
   value: string;
   label: string;
@@ -1473,5 +1475,12 @@ export const productPages: Record<string, ProductPageData> = {
     projectList: [],
   },
 };
+
+for (const [slug, data] of Object.entries(projectData)) {
+  if (productPages[slug]) {
+    productPages[slug].projectRefs = data.projectRefs;
+    productPages[slug].projectList = data.projectList;
+  }
+}
 
 export const productSlugs = Object.keys(productPages);

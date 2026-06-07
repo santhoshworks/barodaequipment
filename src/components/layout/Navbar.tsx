@@ -134,7 +134,7 @@ export default function Navbar() {
               </a>
             )
           )}
-          <a href="/login" onClick={() => setMobileOpen(false)}>
+          <a href="/login" className="nav-mobile-login" onClick={() => setMobileOpen(false)}>
             Login
           </a>
           <a href="/#contact" className="btn btn-primary" onClick={() => setMobileOpen(false)}>

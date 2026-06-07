@@ -8,6 +8,7 @@ const stats = [
 ];
 
 const quickLinks = [
+  { label: 'Manage Projects',    href: '/admin/projects' },
   { label: 'Add Client',         href: '/admin/clients' },
   { label: 'Manage Certs',       href: '/admin/certifications' },
   { label: 'View Inquiries',     href: '/admin/inquiries' },

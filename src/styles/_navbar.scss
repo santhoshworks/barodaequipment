@@ -82,9 +82,36 @@
   }
 }
 
+.navbar-login {
+  display: none;
+  margin-left: auto;
+  padding: 0 18px;
+  font-size: 14px;
+  height: 38px;
+  line-height: 38px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  @include media-breakpoint-up(lg) { display: block; }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: $white;
+    text-decoration: none;
+  }
+}
+
 .navbar-cta {
   display: none;
-  margin-left: 16px;
+  margin-left: 8px;
   padding: 0 24px;
   font-size: 15px;
   height: 44px;
@@ -206,8 +233,24 @@
     &:hover { color: $white; background: rgba(255, 255, 255, 0.05); }
   }
 
+  .nav-mobile-login {
+    margin: 8px 24px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    padding: 10px 24px;
+    font-weight: 500;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.7);
+      color: $white;
+    }
+  }
+
   .btn-primary {
-    margin: 12px 24px 4px;
+    margin: 8px 24px 4px;
     text-align: center;
     color: var(--teal);
     background: $white;

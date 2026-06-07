@@ -5,6 +5,7 @@ export interface AdminNavLink {
 
 export const adminNavLinks: AdminNavLink[] = [
   { label: 'Dashboard',          href: '/admin' },
+  { label: 'Projects',           href: '/admin/projects' },
   { label: 'Client Information', href: '/admin/clients' },
   { label: 'Certifications',     href: '/admin/certifications' },
   { label: 'Footprint',          href: '/admin/footprint' },
