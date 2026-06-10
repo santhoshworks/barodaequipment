@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "@/styles/globals.scss";
 import Script from "next/script";
+import { Toaster } from "react-hot-toast";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -42,7 +43,10 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster position="top-center" />
+      </body>
     </html>
   );
 }
