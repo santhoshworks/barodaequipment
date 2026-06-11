@@ -1,0 +1,148 @@
+@use './variables' as *;
+
+// ---- Page-level layout ----------------------------------------------------
+.team-page,
+.org-page {
+  padding-top: 80px; // clear the fixed navbar
+}
+
+.team-hero,
+.org-hero {
+  background: $bg-light;
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid rgba(28, 10, 2, 0.07);
+}
+
+.team-heading,
+.org-heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: $navy;
+  margin-bottom: 1rem;
+}
+
+.team-subheading,
+.org-subheading {
+  font-size: 1rem;
+  color: $text-muted;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+// ---- Team grid ------------------------------------------------------------
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include media-breakpoint-up(md) { grid-template-columns: repeat(2, 1fr); }
+  @include media-breakpoint-up(xl) { grid-template-columns: repeat(3, 1fr); }
+}
+
+// ---- Team card ------------------------------------------------------------
+.team-card {
+  background: $white;
+  border-radius: 12px;
+  box-shadow: $shadow-card;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-3px);
+  }
+}
+
+.team-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: $bg-light;
+  overflow: hidden;
+}
+
+.team-photo {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.team-info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $navy;
+  margin-bottom: 0.25rem;
+}
+
+.team-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mint);
+  margin-bottom: 1rem;
+}
+
+.team-bio {
+  font-size: 0.875rem;
+  color: $text-muted;
+  line-height: 1.7;
+  flex: 1;
+}
+
+// ---- Org chart page -------------------------------------------------------
+.org-charts { max-width: 1100px; margin: 0 auto; }
+
+.org-chart-figure {
+  margin: 0 0 2.5rem;
+}
+
+.org-chart-figure--primary { margin-bottom: 3.5rem; }
+
+.org-chart-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 8px;
+  overflow: hidden;
+  background: $bg-light;
+  border: 1px solid rgba(28, 10, 2, 0.08);
+
+  &--sm { aspect-ratio: 4 / 3; }
+}
+
+.org-chart-img {
+  object-fit: contain;
+}
+
+.org-chart-caption {
+  text-align: center;
+  font-size: 13px;
+  color: $text-muted;
+  margin-top: 0.75rem;
+}
+
+.org-prev-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $navy;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(28, 10, 2, 0.08);
+}
+
+.org-prev-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include media-breakpoint-up(md) { grid-template-columns: repeat(2, 1fr); }
+}

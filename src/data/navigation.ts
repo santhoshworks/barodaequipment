@@ -18,7 +18,16 @@ export const navLinks: NavLink[] = [
     ],
   },
   { label: 'About', href: '/#about' },
-  { label: 'Clients', href: '/#clients' },
+  {
+    label: 'Company',
+    href: '/team',
+    children: [
+      { label: 'Team', href: '/team' },
+      { label: 'Org Chart', href: '/org-chart' },
+    ],
+  },
+  { label: 'Clients', href: '/clients' },
+  { label: 'Footprint', href: '/footprint' },
   { label: 'Certifications', href: '/#certifications' },
   { label: 'Location', href: '/#location' },
 ];
