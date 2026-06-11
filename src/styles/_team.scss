@@ -1,35 +1,66 @@
 @use './variables' as *;
 
-// ---- Page-level layout ----------------------------------------------------
-.team-page,
-.org-page {
-  padding-top: 80px; // clear the fixed navbar
+// ═══════════════════════════════════════════════════════════════════
+// SHARED HERO  (team + org-chart pages)
+// Mirrors .product-hero but with a solid navy background instead of
+// a full-bleed image, keeping the same height, padding, and text style.
+// ═══════════════════════════════════════════════════════════════════
+
+.team-hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  padding-top: 72px; // clear fixed navbar
+  background: var(--navy);
+  overflow: hidden;
+
+  // Subtle diagonal texture — same technique as product hero overlay
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 50%, rgba(255, 140, 58, 0.08) 0%, transparent 60%),
+      linear-gradient(135deg, rgba(255,255,255,0.02) 25%, transparent 25%);
+    pointer-events: none;
+  }
 }
 
-.team-hero,
-.org-hero {
-  background: $bg-light;
-  padding: 4rem 0 3rem;
-  border-bottom: 1px solid rgba(28, 10, 2, 0.07);
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, transparent 30%, rgba(28, 10, 2, 0.45) 100%);
+  pointer-events: none;
 }
 
-.team-heading,
-.org-heading {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: $navy;
-  margin-bottom: 1rem;
+.team-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 0 80px;
+  max-width: 660px;
+
+  // breadcrumb inherits the product-page .breadcrumb styles from _product-page.scss
+
+  h1 {
+    color: $white;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    margin: 12px 0 20px;
+  }
+
+  > p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 540px;
+  }
 }
 
-.team-subheading,
-.org-subheading {
-  font-size: 1rem;
-  color: $text-muted;
-  max-width: 600px;
-  line-height: 1.7;
-}
+// ═══════════════════════════════════════════════════════════════════
+// TEAM GRID
+// ═══════════════════════════════════════════════════════════════════
 
-// ---- Team grid ------------------------------------------------------------
 .team-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -39,19 +70,23 @@
   @include media-breakpoint-up(xl) { grid-template-columns: repeat(3, 1fr); }
 }
 
-// ---- Team card ------------------------------------------------------------
+// ═══════════════════════════════════════════════════════════════════
+// TEAM CARD
+// ═══════════════════════════════════════════════════════════════════
+
 .team-card {
   background: $white;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: $shadow-card;
   overflow: hidden;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(28, 10, 2, 0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 
   &:hover {
     box-shadow: $shadow-hover;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
   }
 }
 
@@ -80,13 +115,14 @@
   font-weight: 700;
   color: $navy;
   margin-bottom: 0.25rem;
+  line-height: 1.3;
 }
 
 .team-title {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   color: var(--mint);
   margin-bottom: 1rem;
 }
@@ -98,23 +134,31 @@
   flex: 1;
 }
 
-// ---- Org chart page -------------------------------------------------------
-.org-charts { max-width: 1100px; margin: 0 auto; }
+// ═══════════════════════════════════════════════════════════════════
+// ORG CHART
+// ═══════════════════════════════════════════════════════════════════
+
+.org-charts {
+  max-width: 100%;
+}
 
 .org-chart-figure {
   margin: 0 0 2.5rem;
 }
 
-.org-chart-figure--primary { margin-bottom: 3.5rem; }
+.org-chart-figure--primary {
+  margin-bottom: 4rem;
+}
 
 .org-chart-img-wrap {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 2;
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
   background: $bg-light;
   border: 1px solid rgba(28, 10, 2, 0.08);
+  box-shadow: $shadow-card;
 
   &--sm { aspect-ratio: 4 / 3; }
 }
@@ -132,11 +176,13 @@
 
 .org-prev-heading {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: $navy;
   margin-bottom: 1.5rem;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   border-top: 1px solid rgba(28, 10, 2, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .org-prev-grid {

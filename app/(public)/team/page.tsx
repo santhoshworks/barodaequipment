@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getTeam } from '@/data/team';
 
 export const metadata: Metadata = {
@@ -12,20 +13,39 @@ export default async function TeamPage() {
   const members = await getTeam();
 
   return (
-    <main className="team-page">
-      <section className="section team-hero">
-        <div className="container">
-          <p className="section-label">Our People</p>
-          <h1 className="team-heading">Where Excellence Is a Way of Life</h1>
-          <p className="team-subheading">
-            Meet the seasoned engineers, managers, and specialists who drive
-            Baroda Equipment & Vessels forward.
+    <>
+      {/* ═══ HERO ═══ */}
+      <section className="team-hero">
+        <div className="team-hero-overlay" />
+        <div className="container-inner team-hero-content">
+          <div className="breadcrumb">
+            <Link href="/">Home</Link>
+            <span>→</span>
+            <span className="bc-current">Team</span>
+          </div>
+          <span className="section-label" style={{ color: 'var(--mint)' }}>
+            Our People
+          </span>
+          <h1>Where Excellence Is a Way of Life</h1>
+          <p>
+            Meet the seasoned engineers, managers, and specialists who have
+            driven Baroda Equipment &amp; Vessels forward for over four decades.
           </p>
         </div>
       </section>
 
+      {/* ═══ TEAM GRID ═══ */}
       <section className="section">
-        <div className="container">
+        <div className="container-inner">
+          <div className="section-header text-center">
+            <span className="section-label">Leadership &amp; Management</span>
+            <h2>The People Behind the Precision</h2>
+            <p>
+              A team combining engineering rigour, industry depth, and decades
+              of hands-on manufacturing experience.
+            </p>
+          </div>
+
           <div className="team-grid">
             {members.map((member) => (
               <article key={member.id} className="team-card">
@@ -34,12 +54,12 @@ export default async function TeamPage() {
                     src={member.photo}
                     alt={member.name}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="team-photo"
                   />
                 </div>
                 <div className="team-info">
-                  <h2 className="team-name">{member.name}</h2>
+                  <h3 className="team-name">{member.name}</h3>
                   <p className="team-title">{member.title}</p>
                   <p className="team-bio">{member.bio}</p>
                 </div>
@@ -48,6 +68,6 @@ export default async function TeamPage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

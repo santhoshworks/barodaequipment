@@ -15,6 +15,8 @@ const footerLinks = {
   ],
   company: [
     { label: 'About Us',       href: '/#about' },
+    { label: 'Team',           href: '/team' },
+    { label: 'Org Chart',      href: '/org-chart' },
     { label: 'Clients',        href: '/#clients' },
     { label: 'Certifications', href: '/#certifications' },
     { label: 'Location',       href: '/#location' },
