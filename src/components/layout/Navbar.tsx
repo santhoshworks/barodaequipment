@@ -3,11 +3,28 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { navLinks } from '@/data/navigation';
+import { useAuthStore } from '@/store/authStore';
 
 export default function Navbar() {
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
+
+  const isLoggedIn = useAuthStore((s) => s.isLoggedIn);
+  const hasHydrated = useAuthStore((s) => s.hasHydrated);
+  const logout = useAuthStore((s) => s.logout);
+
+  // Before hydration, render the logged-out link on both server and client so
+  // the markup matches; the Logout swap happens only after rehydration.
+  const showLogout = hasHydrated && isLoggedIn;
+
+  const handleLogout = () => {
+    logout();
+    setMobileOpen(false);
+    router.push('/');
+  };
 
   useEffect(() => {
     const closeOnResize = () => {
@@ -64,9 +81,15 @@ export default function Navbar() {
           )}
         </div>
 
-        <a href="/login" className="navbar-login">
-          Login
-        </a>
+        {showLogout ? (
+          <button type="button" className="navbar-login" onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          <Link href="/login" className="navbar-login">
+            Login
+          </Link>
+        )}
 
         <button
           className="nav-hamburger"
@@ -131,9 +154,15 @@ export default function Navbar() {
               </a>
             )
           )}
-          <a href="/login" className="nav-mobile-login" onClick={() => setMobileOpen(false)}>
-            Login
-          </a>
+          {showLogout ? (
+            <button type="button" className="nav-mobile-login" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            <Link href="/login" className="nav-mobile-login" onClick={() => setMobileOpen(false)}>
+              Login
+            </Link>
+          )}
         </div>
       )}
     </nav>
